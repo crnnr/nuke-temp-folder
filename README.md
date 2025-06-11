@@ -2,8 +2,16 @@
 A script to deep delete (bottom up-approach) a folder of your chosing
 
 ## Setup
-1. Download script
-2. Unblock script
+1. Download scripts
+2. Unblock scripts: `Unblock-File .\nukeTempFolder.ps1` and `Unblock-File .\CreateScheduledTask.ps1`
 3. Save somewhere™
-4. Create temp folder (default C:\temp)
-5. Create task in Task Scheduler that starts the script on log on (see [winget-auto-update](https://github.com/MichaMican/winget-auto-update/blob/main/README.md) for more detailed instructions).
+4. Create your temp folder if it doesn't exist
+5. Run the CreateScheduledTask script to automatically create a scheduled task:
+   ```powershell
+   .\CreateScheduledTask.ps1 -ScriptPath "C:\path\to\nukeTempFolder.ps1" -TempFolderPath "C:\your\temp\folder"
+   ```
+## Disclaimers
+
+**Security Warning**: Automatically scheduled scripts can be dangerous as they run with predefined privileges. attackers might be able to execute malicious scripts with higher privliges if permissions are not set correctly throughout your system.
+
+**Data Loss Warning**: This script permanently deletes files and folders. We are not liable for any lost data resulting from the use of this script. Proceed with caution
