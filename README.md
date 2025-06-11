@@ -3,7 +3,7 @@ A script to deep delete (bottom up-approach) a folder of your chosing
 
 ## Setup
 1. Download scripts
-2. Unblock scripts: `Unblock-File .\nukeTempFolder.ps1` and `Unblock-File .\CreateScheduledTask.ps1`
+2. Unblock scripts
 3. Save somewhere™
 4. Create your temp folder if it doesn't exist
 5. Run the CreateScheduledTask script to automatically create a scheduled task:
