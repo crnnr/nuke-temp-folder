@@ -3,14 +3,9 @@ param(
     [string]
     $Path
 )
-
-function Main {
-    $Items = Get-ChildItem -LiteralPath $Path -Force
-    foreach ($Item in $Items) {
-        Write-Host "Removing $($Item.FullName)"
-        Remove-Item -LiteralPath $Item.FullName -Force -Recurse
-    }
-}
-
 $ErrorActionPreference = "SilentlyContinue"
-Main
+$Items = Get-ChildItem -LiteralPath $Path -Force
+foreach ($Item in $Items) {
+    Write-Host "Removing $($Item.FullName)"
+    Remove-Item -LiteralPath $Item.FullName -Force -Recurse
+}
